@@ -1,6 +1,6 @@
 USE DB_proj_library_system;
 
--- Delete a student who has no borrow records
+-- Delete a student
 DELETE FROM Student 
 WHERE MemberID = 50;
 
@@ -19,3 +19,4 @@ WHERE BorrowID = 5;
 -- Delete an admin
 DELETE FROM Admin
 WHERE AdminID = 3;
+
