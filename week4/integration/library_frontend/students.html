@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LibrarySys — Students</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2 class="logo">EL-GEM</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="books.html">Books</a>
+    <a href="students.html" class="active">Students</a>
+    <a href="borrow.html">Borrow</a>
+    <a href="category.html">Category</a>
+    <a href="admin.html">Admin</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-container">
+    <div class="topbar">
+      <h1>Students</h1>
+      <div class="search-wrap">
+        <input id="search-input" type="search" placeholder="Search..." />
+      </div>
+      <div class="top-actions">
+        <button id="btn-add-student" class="btn primary">+ Add Student</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Student List</h3>
+        </div>
+
+        <div class="panel-body">
+          <table id="students-table" class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody">
+              <!-- populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Add / Edit Student -->
+  <div id="student-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="student-modal-close">&times;</span>
+      <h2 id="student-modal-title">Add Student</h2>
+
+      <form id="student-form">
+        <input type="hidden" id="student-id" name="id" />
+
+        <label>Name</label>
+        <input type="text" id="s-name" name="name" required />
+
+        <label>Department</label>
+        <input type="text" id="s-dept" name="department" required />
+
+        <label>Email</label>
+        <input type="email" id="s-email" name="email" required />
+
+        <label>Phone</label>
+        <input type="text" id="s-phone" name="phone" required />
+
+        <div style="margin-top:12px; text-align:right;">
+          <button type="button" id="student-modal-cancel" class="btn">Cancel</button>
+          <button type="submit" class="btn primary" id="student-modal-save">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="students.js"></script>
+</body>
+</html>

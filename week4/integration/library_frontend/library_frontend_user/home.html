@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+        --blue: #2980ff;
+        --soft-blue: #e9f2ff;
+        --bg: #f7faff;
+        --text: #1c1c1c;
+        --card: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+    }
+
+    /* TOPBAR */
+    .topbar {
+        background: var(--card);
+        padding: 16px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--blue);
+    }
+
+    .nav {
+        display: flex;
+        gap: 18px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: var(--text);
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition: 0.2s;
+    }
+
+    .nav a:hover {
+        background: var(--soft-blue);
+    }
+
+    /* PAGE CONTENT */
+    .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .welcome-card {
+        background: var(--card);
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+
+    .welcome-card h2 {
+        margin: 0;
+        color: var(--blue);
+    }
+
+    .search-box {
+        margin-top: 25px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-box input {
+        flex: 1;
+        padding: 14px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+    }
+
+    .search-box button {
+        background: var(--blue);
+        color: white;
+        border: none;
+        padding: 14px 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* FEATURED BOOKS */
+    .section-title {
+        margin-top: 40px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .books-grid {
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+    }
+
+    .book-card {
+        background: var(--card);
+        padding: 15px;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+
+    .book-card h4 {
+        margin: 10px 0 0;
+        font-size: 16px;
+    }
+
+    /* BORROW BUTTON */
+    .borrow-btn {
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+        background: var(--blue);
+        color: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    .borrow-btn:hover {
+        opacity: 0.9;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="logo">📘 Library</div>
+
+    <div class="nav">
+        <a href="home.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="profile.html">Profile</a>
+        <a href="../auth/login.html" style="color:red;">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="welcome-card">
+        <h2>Welcome, Student!</h2>
+        <p>Search for books or browse categories below.</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search books..." id="searchInput">
+            <button onclick="searchBooks()">Search</button>
+        </div>
+    </div>
+
+    <h3 class="section-title">Featured Books</h3>
+    <div class="books-grid" id="featuredBooks"></div>
+
+    <a href="borrow.html" class="borrow-btn">📘 Request to Borrow a Book</a>
+
+</div>
+
+<script>
+function searchBooks() {
+    const q = document.getElementById("searchInput").value;
+    window.location.href = "books.html?search=" + encodeURIComponent(q);
+}
+</script>
+
+</body>
+</html>
