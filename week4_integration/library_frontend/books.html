@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LibrarySys — Books</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="modern-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar-modern">
+    <div class="logo-row">
+      <img src="https://cdn.discordapp.com/attachments/1376237956452450518/1443520281745293405/Lambang_UGM-hitam.png?ex=69295e86&is=69280d06&hm=01e3dd667ab881d7871eeacd8cd9c57657ada2a4c131816ba815baa7825df9fa&"
+           class="logo-img">
+      <h2 class="logo-modern">EL-GEM</h2>
+    </div>
+    
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="books.html" class="active">Books</a>
+      <a href="students.html">Students</a>
+      <a href="borrow.html">Borrow</a>
+      <a href="category.html">Category</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-modern">
+
+    <!-- HEADER -->
+    <div class="topbar-modern">
+      <h1>Books</h1>
+      <button id="btn-add" class="btn-modern-primary">+ Add Book</button>
+    </div>
+
+    <!-- PANEL -->
+    <div class="panel-modern">
+      <div class="panel-header-modern">
+        <h3>Book List</h3>
+      </div>
+
+      <div class="panel-body-modern">
+
+        <!-- SEARCH BAR -->
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input id="searchInput" class="input-search-modern" type="text" placeholder="Search books...">
+        </div>
+
+        <!-- TABLE -->
+        <table id="books-table" class="table-modern">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN</th>
+              <th>Year</th>
+              <th>CategoryID</th>
+              <th>AdminID</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="books-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div id="book-modal" class="modal-modern">
+    <div class="modal-content-modern">
+
+      <span class="modal-close-modern" id="modal-close">&times;</span>
+      <h2 id="modal-title">Add Book</h2>
+
+      <form id="book-form">
+
+        <input type="hidden" id="book-id" name="id"/>
+
+        <label>Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label>Author</label>
+        <input type="text" id="author" name="author" required>
+
+        <label>ISBN</label>
+        <input type="text" id="isbn" name="isbn" required>
+
+        <label>Publication Year</label>
+        <input type="number" id="year" name="year" min="1900" max="2100" required>
+
+        <label>AdminID</label>
+        <input type="number" id="admin" name="admin" required>
+
+        <label>CategoryID</label>
+        <input type="number" id="category" name="category" required>
+
+        <label>Status</label>
+        <select id="status" name="status">
+          <option value="available">available</option>
+          <option value="borrowed">borrowed</option>
+        </select>
+
+        <div class="modal-actions-modern">
+          <button type="button" class="btn-modern-secondary" id="modal-cancel">Cancel</button>
+          <button type="submit" class="btn-modern-primary">Save</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script src="books.js"></script>
+</body>
+</html>

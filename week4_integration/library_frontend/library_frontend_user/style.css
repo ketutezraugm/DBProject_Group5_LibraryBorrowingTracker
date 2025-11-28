@@ -1,0 +1,73 @@
+/* Color scheme taken from admin.html */
+:root {
+    --primary: #4A90E2;
+    --secondary: #f5f7fa;
+    --accent: #2d6cdf;
+    --text-dark: #333;
+    --text-light: #fff;
+    --card-bg: #ffffff;
+    --border: #dcdcdc;
+    --success: #4caf50;
+    --danger: #e74c3c;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--secondary);
+    color: var(--text-dark);
+}
+
+.topbar {
+    width: 100%;
+    background: var(--primary);
+    padding: 15px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:disabled {
+    background: gray;
+}
+
+.book-item {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.book-title {
+    font-weight: bold;
+}
+
+.status-available {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.status-borrowed {
+    color: var(--danger);
+    font-weight: bold;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LibrarySys — Students</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+
+<body class="modern-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar-modern">
+    <div class="logo-row">
+      <img src="https://cdn.discordapp.com/attachments/1376237956452450518/1443520281745293405/Lambang_UGM-hitam.png?ex=69295e86&is=69280d06&hm=01e3dd667ab881d7871eeacd8cd9c57657ada2a4c131816ba815baa7825df9fa&"
+           class="logo-img">
+      <h2 class="logo-modern">EL-GEM</h2>
+    </div>
+    
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="books.html">Books</a>
+      <a href="students.html" class="active">Students</a>
+      <a href="borrow.html">Borrow</a>
+      <a href="category.html">Category</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="main-modern">
+
+    <!-- TOP BAR -->
+    <div class="topbar-modern">
+      <h1>Students</h1>
+      <button id="btn-add-student" class="btn-modern-primary">+ Add Student</button>
+    </div>
+
+
+    <!-- PANEL -->
+    <div class="panel-modern">
+      <div class="panel-header-modern">
+        <h3>Student List</h3>
+      </div>
+
+      <div class="panel-body-modern">
+
+        <!-- SEARCH BAR -->
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input id="searchInput" class="input-search-modern" type="text" placeholder="Search students...">
+        </div>
+
+        <table id="students-table" class="table-modern">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="students-tbody">
+            <!-- JS inserts rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- MODAL -->
+  <div id="student-modal" class="modal-modern">
+    <div class="modal-content-modern">
+
+      <span id="student-modal-close" class="modal-close-modern">&times;</span>
+      <h2 id="student-modal-title">Add Student</h2>
+
+      <form id="student-form">
+
+        <input type="hidden" id="student-id" name="id" />
+
+        <label>Name</label>
+        <input type="text" id="s-name" name="name" required />
+
+        <label>Department</label>
+        <input type="text" id="s-dept" name="department" required />
+
+        <label>Email</label>
+        <input type="email" id="s-email" name="email" required />
+
+        <label>Phone</label>
+        <input type="text" id="s-phone" name="phone" required />
+
+        <div class="modal-actions-modern">
+          <button type="button" id="student-modal-cancel" class="btn-modern-secondary">Cancel</button>
+          <button type="submit" class="btn-modern-primary" id="student-modal-save">Save</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script src="students.js"></script>
+</body>
+</html>
